@@ -1,0 +1,25 @@
+<projectSpec>
+  <project
+        name="openloop_300W"
+        device="TMS320F28P550SJ9"
+        cgtVersion="25.11.1.LTS"
+        outputFormat="ELF"
+        launchWizard="False"
+        linkerCommandFile="lnk.cmd"
+        enableSysConfigTool="false">
+    <configuration
+        name="CPU1_LAUNCHXL_FLASH"
+        compilerBuildOptions="-v28 -ml -mt --float_support=fpu32 --tmu_support=tmu0 --gen_func_subsections --define=DEBUG --define=_FLASH --define=_LAUNCHXL_F28P55X --diag_warning=225 --diag_suppress=10063 --opt_level=off --c99 -I${C2000WARE_DLIB_ROOT} -I${PROJECT_ROOT}/device"
+        linkerBuildOptions="--entry_point=code_start --stack_size=0x400 --heap_size=0x400 --rom_model --define=__TI_EABI__ --define=_FLASH -i${C2000WARE_ROOT}/libraries/math/FPUfastRTS/c28/lib -i${C2000WARE_ROOT}/libraries/dsp/FPU/c28/lib" />
+    <pathVariable name="C2000WARE_ROOT" path="E:/TI/c2000ware" scope="project" />
+    <pathVariable name="C2000WARE_DLIB_ROOT" path="E:/TI/c2000ware/driverlib/f28p55x/driverlib" scope="project" />
+    <file action="copy" path="E:/TI/c2000ware/device_support/f28p55x/common/include/device.h" targetDirectory="device" />
+    <file action="copy" path="E:/TI/c2000ware/device_support/f28p55x/common/include/driverlib.h" targetDirectory="device" />
+    <file action="copy" path="E:/TI/c2000ware/device_support/f28p55x/common/source/device.c" targetDirectory="device" />
+    <file action="copy" path="E:/TI/c2000ware/device_support/f28p55x/common/source/f28p55x_codestartbranch.asm" targetDirectory="device" />
+    <file action="copy" path="E:/TI/c2000ware/device_support/f28p55x/common/targetConfigs/TMS320F28P550SJ9_LaunchPad.ccxml" targetDirectory="targetConfigs" />
+    <file action="link" path="E:/TI/c2000ware/driverlib/f28p55x/driverlib/ccs/Debug/driverlib.lib" targetDirectory="" />
+    <file action="copy" path="lnk.cmd" targetDirectory="" />
+    <file action="copy" path="app_openloop.c" targetDirectory="" />
+  </project>
+</projectSpec>

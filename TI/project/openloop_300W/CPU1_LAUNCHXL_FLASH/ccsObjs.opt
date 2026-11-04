@@ -1,6 +1,0 @@
-"./app_openloop.obj"
-"./device/device.obj"
-"./device/f28p55x_codestartbranch.obj"
-"E:/TI/c2000ware/driverlib/f28p55x/driverlib/ccs/Debug/driverlib.lib"
-"../lnk.cmd"
--llibc.a
